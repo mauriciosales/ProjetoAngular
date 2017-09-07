@@ -1,0 +1,34 @@
+<p>
+  cursos component!
+</p>
+
+  <li *ngFor="let curso of cursos">
+    {{curso}}
+  </li>
+  <br><br>
+  <select #classe (change)="0">
+
+    <option class="alert-primary">alert-primary</option>
+    <option class="alert-secondary">alert-secondary</option>
+    <option class="alert-success">alert-success</option>
+    <option class="alert-danger">alert-danger</option>
+
+  </select>
+
+  <br>
+  <div class="alert {{ classe.value }}" role="alert">Alerta</div>
+
+  <div class="alert" role="alert"
+  [class.alert-success]="classe.value == 'alert-success'">Alerta</div>
+
+  <div class="alert alert-danger" role= "alert"
+  [style.display]= "classe.value == 'alert-danger' ? 'block' : 'none'"
+  > Danger</div>
+<section>
+
+  <div >
+    <button (click) ="botaoClicado()" class="btn btn-primary">Me clique!!!</button>
+      <br>
+      <input type="text" (keyUp)="onKeyUp($event)"/>
+    </div>
+</section>
